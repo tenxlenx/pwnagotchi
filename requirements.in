@@ -14,9 +14,9 @@ file-read-backwards
 # Only using basic Flask and Flask plugin features.
 # Should be kept up-to-date as Flask is notorious for breaking
 # environments with their extremely loose dependency definitions.
-flask-cors~=3.0
-flask-wtf~=1.0
-flask~=1.0
+flask-cors
+flask-wtf
+flask
 
 # Used for modeling AI parameters.
 # NOTE: stable-baselines wants gym[atari,classic_control] but we
@@ -32,7 +32,7 @@ inky
 
 # Used in the AI and UI layers.
 # Only using basic numpy features.
-#numpy~=1.21.4 # Moved to 1.21.4 from 1.20
+numpy
 
 # Used in the UI layer.
 # Only using core PIL features (Image, ImageFont, ImageDraw).
