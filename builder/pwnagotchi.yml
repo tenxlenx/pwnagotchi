@@ -118,6 +118,9 @@
           - binutils
           - lnav
 
+  environment:
+    ARCHFLAGS: "-arch armv7l"
+
   tasks:
   - name: System details
     debug: 
