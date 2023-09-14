@@ -25,7 +25,7 @@ flask~=1.0
 # Using pip's new backtracking resolver from pip>=20.3 is required
 # as it improves handling of extras required by indirect dependencies.
 # NOTE: gym v0.22 modified the gym.Env API.
-gym
+gym<0.22
 
 # Used for Inky pHAT and wHAT displays.
 inky
@@ -87,4 +87,4 @@ websockets
 # function that was later removed in MarkupSafe v2.1.0.
 # Jinja2 v3.0 no longer uses the deprecated function but
 # falls outside the version range requested by flask.
-MarkupSafe
+MarkupSafe<2.1.0
