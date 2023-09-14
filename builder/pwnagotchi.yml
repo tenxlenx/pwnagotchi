@@ -285,7 +285,7 @@
   - name: Install pwnagotchi from source archive
     pip:
       name: /usr/local/src/pwnagotchi/pwnagotchi-{{ pwnagotchi.version }}.tar.gz
-      extra_args: --verbose '--only-binary=:all:' --ignore-installed --platform linux-armv7l --target /usr/local/lib/python3.7/dist-packages
+      extra_args: --verbose --prefer-binary --ignore-installed 
 
   - name: create /usr/local/share/pwnagotchi/ folder
     file:
