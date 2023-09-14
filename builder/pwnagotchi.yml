@@ -288,7 +288,12 @@
   - name: Install pwnagotchi from source archive
     pip:
       name: /usr/local/src/pwnagotchi/pwnagotchi-{{ pwnagotchi.version }}.tar.gz
-      extra_args: --verbose '--only-binary=:all:' --ignore-installed --platform linux_armv7l --target /usr/local/lib/python3.7/dist-packages
+      extra_args: --verbose --no-deps --ignore-installed --platform linux_armv7l --target /usr/local/lib/python3.7/dist-packages/
+
+#  - name: Forcefully update numpy after install pwnagotchi
+#    pip:
+#      name: numpy~=1.21.6
+#      extra_args: --verbose --no-deps --upgrade --ignore-installed --platform linux_armv7l --target /usr/local/lib/python3.7/dist-packages
 
   - name: create /usr/local/share/pwnagotchi/ folder
     file:
