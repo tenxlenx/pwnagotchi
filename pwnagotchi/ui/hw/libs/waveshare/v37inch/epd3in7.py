@@ -148,7 +148,7 @@ class EPD:
         logger.debug("e-Paper busy release") 
 
 
-    def init(self, mode):
+    def init(self, mode=1):
         if (epdconfig.module_init() != 0):
             return -1
         # EPD hardware init start
@@ -402,6 +402,9 @@ class EPD:
         self.send_command(0x20)
         self.ReadBusy()   
 
+    def display(self, image) :
+        self.display_1Gray(image)
+
 
     def display_1Gray(self, image):
         if (image == None):
@@ -422,7 +425,7 @@ class EPD:
         self.ReadBusy()   
         
 
-    def Clear(self, color, mode):
+    def Clear(self, color, mode=1):
         self.send_command(0x4E)
         self.send_data(0x00)
         self.send_data(0x00)
