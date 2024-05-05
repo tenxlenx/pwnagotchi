@@ -40,6 +40,9 @@ class Display(View):
     def is_waveshare_v3(self):
         return self._implementation.name == 'waveshare_3'
 
+    def is_waveshare_v4(self):
+        return self._implementation.name == 'waveshare_4'
+
     def is_waveshare27inch(self):
         return self._implementation.name == 'waveshare27inch' or self._implementation.name == 'waveshare27inchv2'
 
@@ -72,6 +75,9 @@ class Display(View):
 
     def is_waveshare213d(self):
         return self._implementation.name == 'waveshare213d'
+
+    def is_waveshare213g(self):
+        return self._implementation.name == 'waveshare213g'
 
     def is_waveshare213bc(self):
         return self._implementation.name == 'waveshare213bc'

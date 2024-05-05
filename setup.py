@@ -59,12 +59,23 @@ class CustomInstall(install):
 
 
 def version(version_file):
-    with open(version_file, 'rt') as vf:
-        version_file_content = vf.read()
+    #with open(version_file, 'rt') as vf:
+        #version_file_content = vf.read()
 
-    version_match = re.search(r"__version__\s*=\s*[\"\']([^\"\']+)", version_file_content)
-    if version_match:
-        return version_match.groups()[0]
+    #version_match = re.search(r"__version__\s*=\s*[\"\']([^\"\']+)", version_file_content)
+    #if version_match:
+        #return version_match.groups()[0]
+
+    if "PWN_VERSION" in os.environ:
+       return os.environ["PWN_VERSION"]
+    else:
+       with open(version_file, 'rt') as vf:
+          version_file_content = vf.read()
+
+       version_match = re.search(r"__version__\s*=\s*[\"\']([^\"\']+)", version_file_content)
+
+       if version_match:
+          return version_match.groups()[0]
 
     return None
 
